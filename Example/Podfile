@@ -1,0 +1,11 @@
+use_frameworks!
+
+target 'OMGImagePicker_Example' do
+  pod 'OMGImagePicker', :path => '../'
+
+  target 'OMGImagePicker_Tests' do
+    inherit! :search_paths
+
+    
+  end
+end
