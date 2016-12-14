@@ -1,0 +1,6 @@
+framework module OMGImagePicker {
+  umbrella header "OMGImagePicker-umbrella.h"
+
+  export *
+  module * { export * }
+}

@@ -5,7 +5,5 @@ target 'OMGImagePicker_Example' do
 
   target 'OMGImagePicker_Tests' do
     inherit! :search_paths
-
-    
   end
 end

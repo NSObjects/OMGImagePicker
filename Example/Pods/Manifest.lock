@@ -1,0 +1,16 @@
+PODS:
+  - OMGImagePicker (0.1.0)
+
+DEPENDENCIES:
+  - OMGImagePicker (from `../`)
+
+EXTERNAL SOURCES:
+  OMGImagePicker:
+    :path: ../
+
+SPEC CHECKSUMS:
+  OMGImagePicker: a755cbc30c3bd3b0e77169fe917581915d11094b
+
+PODFILE CHECKSUM: 12d3c31888e15aab188b225c209f724f210cd3bd
+
+COCOAPODS: 1.1.1

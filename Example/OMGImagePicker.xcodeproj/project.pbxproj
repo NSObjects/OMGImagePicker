@@ -31,7 +31,7 @@
 		071AAF53B366F43D1759A45D /* Pods-OMGImagePicker_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OMGImagePicker_Example.debug.xcconfig"; path = "Pods/Target Support Files/Pods-OMGImagePicker_Example/Pods-OMGImagePicker_Example.debug.xcconfig"; sourceTree = "<group>"; };
 		242C472222A8A20B85C147E6 /* Pods_OMGImagePicker_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_OMGImagePicker_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		298FD879A08EDBC007B4BF83 /* Pods_OMGImagePicker_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_OMGImagePicker_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		435A201A75E902EDD3135816 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; name = README.md; path = ../README.md; sourceTree = "<group>"; };
+		435A201A75E902EDD3135816 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
 		4993305BA7E15F0AD3268A84 /* Pods-OMGImagePicker_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OMGImagePicker_Example.release.xcconfig"; path = "Pods/Target Support Files/Pods-OMGImagePicker_Example/Pods-OMGImagePicker_Example.release.xcconfig"; sourceTree = "<group>"; };
 		602AB2E5EDEBF55C0E10407A /* Pods-OMGImagePicker_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OMGImagePicker_Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-OMGImagePicker_Tests/Pods-OMGImagePicker_Tests.release.xcconfig"; sourceTree = "<group>"; };
 		607FACD01AFB9204008FA782 /* OMGImagePicker_Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OMGImagePicker_Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -44,8 +44,8 @@
 		607FACE51AFB9204008FA782 /* OMGImagePicker_Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = OMGImagePicker_Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		607FACEA1AFB9204008FA782 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		607FACEB1AFB9204008FA782 /* Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tests.swift; sourceTree = "<group>"; };
-		85206C8704C34F95180B9C2F /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
-		D5B2FF947E8C5C626EC78420 /* OMGImagePicker.podspec */ = {isa = PBXFileReference; includeInIndex = 1; name = OMGImagePicker.podspec; path = ../OMGImagePicker.podspec; sourceTree = "<group>"; };
+		85206C8704C34F95180B9C2F /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
+		D5B2FF947E8C5C626EC78420 /* OMGImagePicker.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = OMGImagePicker.podspec; path = ../OMGImagePicker.podspec; sourceTree = "<group>"; };
 		E36386B429557F24E06580B1 /* Pods-OMGImagePicker_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OMGImagePicker_Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-OMGImagePicker_Tests/Pods-OMGImagePicker_Tests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -215,9 +215,11 @@
 				TargetAttributes = {
 					607FACCF1AFB9204008FA782 = {
 						CreatedOnToolsVersion = 6.3.1;
+						LastSwiftMigration = 0810;
 					};
 					607FACE41AFB9204008FA782 = {
 						CreatedOnToolsVersion = 6.3.1;
+						LastSwiftMigration = 0810;
 						TestTargetID = 607FACCF1AFB9204008FA782;
 					};
 				};
@@ -494,6 +496,7 @@
 				MODULE_NAME = ExampleApp;
 				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.demo.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
@@ -507,6 +510,7 @@
 				MODULE_NAME = ExampleApp;
 				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.demo.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};
@@ -526,6 +530,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
@@ -541,6 +546,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};
