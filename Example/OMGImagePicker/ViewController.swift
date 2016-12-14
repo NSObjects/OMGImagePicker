@@ -38,6 +38,7 @@ class ViewController: UIViewController {
     @IBAction func showImagePickerView(_ sender: Any) {
         let pickViewController = OMGImagePickerViewController()
         pickViewController.delegate = self
+        pickViewController.rightButtonTitle = "Done"
         pickViewController.maxNumberOfSelections = 5
         let navigationController = UINavigationController(rootViewController: pickViewController)
         present(navigationController, animated: true, completion: nil)
