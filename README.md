@@ -1,5 +1,5 @@
 # OMGImagePicker
-![ImagePickerView]()(https://github.com/NSObjects/OMGImagePicker/blob/master/Document/Demo.gif)
+![ImagePickerView](https://github.com/NSObjects/OMGImagePicker/blob/master/Document/Demo.gif)
 
 [![CI Status][image-1]][2]
 [![Version][image-2]][3]
