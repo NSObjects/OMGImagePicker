@@ -40,7 +40,7 @@ public class OMGImagePickerViewController: UIViewController {
         }
     }
     
-    override func viewDidLoad() {
+    override public func viewDidLoad() {
         super.viewDidLoad()
         viewSetup()
         
@@ -56,7 +56,7 @@ public class OMGImagePickerViewController: UIViewController {
         }
     }
     
-    override func viewWillAppear(_ animated: Bool) {
+    override public func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         let scale = UIScreen.main.scale
         let cellSize = flowLayout.itemSize
@@ -72,7 +72,7 @@ public class OMGImagePickerViewController: UIViewController {
 // MARK: - UICollectionViewDataSource
 extension OMGImagePickerViewController:UICollectionViewDataSource {
     
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+    public func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: String(describing: ImageCollectionViewCell.self), for: indexPath) as? ImageCollectionViewCell
             else { fatalError("unexpected cell in collection view") }
         if indexPath.row == 0 {
@@ -80,7 +80,9 @@ extension OMGImagePickerViewController:UICollectionViewDataSource {
                 cell.setCell(disable: true)
             }
             cell.checkBoxImageView.isHidden = true
-            cell.thumbnailImage = UIImage(named: "add_photo")
+            let bundle = Bundle(for: ImageCollectionViewCell.self)
+            let url = bundle.url(forResource: "OMGImagePicker", withExtension: "bundle")
+            cell.thumbnailImage = UIImage(named: "add_photo", in: Bundle(url:url!), compatibleWith: nil)
         } else {
             let asset = fetchResult[indexPath.row - 1]
             cell.checkBoxImageView.isHidden = false
@@ -107,7 +109,7 @@ extension OMGImagePickerViewController:UICollectionViewDataSource {
         return cell
     }
     
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+    public func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return fetchResult.count + 1
     }
     
@@ -115,7 +117,7 @@ extension OMGImagePickerViewController:UICollectionViewDataSource {
 
 // MARK: - UICollectionViewDelegate
 extension OMGImagePickerViewController:UICollectionViewDelegate {
-    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+    public func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         guard selectionPhotoIdentifier.count < maxNumberOfSelections else {
             return
         }
@@ -143,7 +145,7 @@ extension OMGImagePickerViewController:UICollectionViewDelegate {
         }
     }
     
-    func collectionView(_ collectionView: UICollectionView, didDeselectItemAt indexPath: IndexPath) {
+    public func collectionView(_ collectionView: UICollectionView, didDeselectItemAt indexPath: IndexPath) {
         if let cell = collectionView.cellForItem(at: indexPath) as?  ImageCollectionViewCell {
             selectionPhotoIdentifier.remove(object: cell.representedAssetIdentifier)
             collectionView.visibleCells.forEach{ cell in
@@ -159,7 +161,7 @@ extension OMGImagePickerViewController:UICollectionViewDelegate {
 // MARK: - UINavigationControllerDelegate,UIImagePickerControllerDelegate
 extension OMGImagePickerViewController:UINavigationControllerDelegate,UIImagePickerControllerDelegate {
     
-    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
+    public func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
         guard  let original = info[UIImagePickerControllerOriginalImage] as? UIImage else {
             return
         }
@@ -169,7 +171,7 @@ extension OMGImagePickerViewController:UINavigationControllerDelegate,UIImagePic
         picker.dismiss(animated: true, completion: nil)
     }
     
-    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
+    public func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
         picker.dismiss(animated: true, completion: nil)
     }
     
@@ -220,8 +222,9 @@ private extension OMGImagePickerViewController {
         albumSelectButton.setTitle(" PHOTO", for: .normal)
         
         albumSelectButton.setTitleColor(UIColor.black, for: .normal)
-        
-        albumSelectButton.setImage(UIImage(named: "arrow_down"), for: .normal)
+        let bundle = Bundle(for: ImageCollectionViewCell.self)
+        let url = bundle.url(forResource: "OMGImagePicker", withExtension: "bundle")
+        albumSelectButton.setImage(UIImage(named: "arrow_down", in: Bundle(url:url!), compatibleWith: nil), for: .normal)
         albumSelectButton.frame = CGRect(x: 0, y: 0, width: 200, height: 22)
         albumSelectButton.addTarget(self, action: .showAlbumAction, for: .touchUpInside)
         navigationItem.titleView = albumSelectButton
@@ -229,10 +232,8 @@ private extension OMGImagePickerViewController {
     }
     
     @objc func showAlbumSelectViewController(_ sender: UIButton) {
-        let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        guard  let albumViewController = storyboard.instantiateViewController(withIdentifier: "AlbumTableViewController") as? AlbumTableViewController else {
-            return
-        }
+      
+        let albumViewController =  AlbumTableViewController(style: .plain)
         albumViewController.delegate = self
         albumViewController.modalPresentationStyle = .popover
         albumViewController.preferredContentSize = CGSize(width: view.frame.width, height: view.frame.height * 0.75)
@@ -261,7 +262,7 @@ private extension OMGImagePickerViewController {
 
 // MARK: - UIPopoverPresentationControllerDelegate
 extension OMGImagePickerViewController:UIPopoverPresentationControllerDelegate {
-    func adaptivePresentationStyle(for controller: UIPresentationController) -> UIModalPresentationStyle {
+    public func adaptivePresentationStyle(for controller: UIPresentationController) -> UIModalPresentationStyle {
         return .none
     }
 }
@@ -289,7 +290,7 @@ extension OMGImagePickerViewController:AlbumTableViewControllerDelegate {
 // MARK: PHPhotoLibraryChangeObserver
 extension OMGImagePickerViewController: PHPhotoLibraryChangeObserver {
     
-    func photoLibraryDidChange(_ changeInstance: PHChange) {
+    public func photoLibraryDidChange(_ changeInstance: PHChange) {
         DispatchQueue.main.sync {
             if let changeDetails = changeInstance.changeDetails(for: fetchResult) {
                 if changeDetails.fetchResultAfterChanges.count != fetchResult.count {

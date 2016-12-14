@@ -24,6 +24,8 @@
       "OMGImagePicker/Assets/*.png"
     ]
   },
+  "frameworks": "Photos",
+  "requires_arc": true,
   "pod_target_xcconfig": {
     "SWIFT_VERSION": "3.0"
   }

@@ -24,10 +24,10 @@ class ImageCollectionViewCell: UICollectionViewCell {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        
-        
-        checkBoxImageView.image = UIImage(named: "checkbox_normal")
-        checkBoxImageView.highlightedImage = UIImage(named: "checkbox_selected")
+        let bundle = Bundle(for: ImageCollectionViewCell.self)
+        let url = bundle.url(forResource: "OMGImagePicker", withExtension: "bundle")
+        checkBoxImageView.image = UIImage(named: "checkbox_normal", in: Bundle(url: url!), compatibleWith: nil)
+        checkBoxImageView.highlightedImage = UIImage(named: "checkbox_selected", in: Bundle(url: url!), compatibleWith: nil)
         contentView.addSubview(imageView)
         contentView.addSubview(checkBoxImageView)
         contentView.addSubview(disableView)

@@ -7,47 +7,48 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		02E1C7689D312B7FAA47ABF4F107BE4F /* add_photo@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E687EBBC2FD56BA58073FB06046297EB /* add_photo@2x.png */; };
-		165604DD66C5FBAC3898F2B472CC077B /* checkbox_selected@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = D27D29A6B6F4A76AB3F894BDA356E71D /* checkbox_selected@3x.png */; };
-		1AD486D31888785F3B0BBD457396D972 /* checkbox_normal@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = DE559D924DC8CFBDE984C29992748D31 /* checkbox_normal@3x.png */; };
-		2B2AE2EBEEF9CFE4420E1584B2C20A09 /* arrow_down.png in Resources */ = {isa = PBXBuildFile; fileRef = C614B5E0DBA06D908C542E9FAC69CF08 /* arrow_down.png */; };
+		134FDEAE44A4007CC30ACB1DAC6B7714 /* AlbumTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C8DBD9172B798221110BB3706C0E397 /* AlbumTableViewController.swift */; };
+		140A4BE63CC23D096EBEC4CBAAB5F206 /* checkbox_normal@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 439FD5591CA3894EC2C8AE6975B107D0 /* checkbox_normal@2x.png */; };
+		1D8C152CC6B82BB397945E54A34377F7 /* OMGImagePickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 156F2F21B695C0F024EFF11D5D3ED1AE /* OMGImagePickerViewController.swift */; };
+		23110DCE7CFBCB63FB727AAB06890D01 /* OMGImagePicker-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = FE1FC11342EEB574D8CB3FD78EAA615E /* OMGImagePicker-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		2863A8B414E7C554313352CD70D37EDB /* OMGImagePicker-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D4028B0EF0E434268A76D4C97462E5B /* OMGImagePicker-dummy.m */; };
+		2983BA7B5DBDDF73C265ED37B231B3ED /* checkbox_selected@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = D27D29A6B6F4A76AB3F894BDA356E71D /* checkbox_selected@3x.png */; };
 		2C1BEE5CE3E6E8E453E39F7809729E9E /* Pods-OMGImagePicker_Tests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 682A28A8D7712140233CE5218E6718A3 /* Pods-OMGImagePicker_Tests-dummy.m */; };
-		3565781B92FC29B9729607104073AC1C /* OMGImagePickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 156F2F21B695C0F024EFF11D5D3ED1AE /* OMGImagePickerViewController.swift */; };
-		43E95FF910C200731935E015C4EE53AE /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CBB3DE36805AF21409EC968A9691732F /* Foundation.framework */; };
+		2DEFEFE66978A1586AB2B21ABEE2BDB1 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5227A210CE15FB956C43EC30807DF5B9 /* Foundation.framework */; };
+		43E95FF910C200731935E015C4EE53AE /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5227A210CE15FB956C43EC30807DF5B9 /* Foundation.framework */; };
+		4BB15F9C505082AB698CA759942BCD5E /* arrow_down.png in Resources */ = {isa = PBXBuildFile; fileRef = C614B5E0DBA06D908C542E9FAC69CF08 /* arrow_down.png */; };
+		550D6A7760A4E7342C13C28CFD307AC2 /* AlbumTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7196386F4541E20F378227DA7B4B2C3E /* AlbumTableViewCell.swift */; };
 		583C8EAEC5609816508F6CB51D4B047D /* Pods-OMGImagePicker_Example-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 3AB2B50DFC9E6D5D10F9A9C8F050B527 /* Pods-OMGImagePicker_Example-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		5A8148F61189CDE59C3CE34A0DF0A67B /* add_photo.png in Resources */ = {isa = PBXBuildFile; fileRef = 94A764192670D3E74067EC4754069894 /* add_photo.png */; };
-		5B2977E46F7935A1E440CF94B222D79B /* OMGImagePicker.bundle in Resources */ = {isa = PBXBuildFile; fileRef = AB7DBFC48BD4ADF39E3E963CD50FA33F /* OMGImagePicker.bundle */; };
-		5C021E704FB6B6AFEDC3B1A49387DF09 /* checkbox_selected.png in Resources */ = {isa = PBXBuildFile; fileRef = E24BBEC58F1D411DE6DA3B67EE4059A4 /* checkbox_selected.png */; };
-		669857CA78B2857CFCE40CF93DAEA50F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CBB3DE36805AF21409EC968A9691732F /* Foundation.framework */; };
-		6DD37F0BE8301A49FEF157B10DD9781D /* checkbox_normal.png in Resources */ = {isa = PBXBuildFile; fileRef = 38A72E05013F574C5A5331F33F6B85BB /* checkbox_normal.png */; };
-		767995C9031B35A285189361DF53BEEF /* checkbox_normal@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 439FD5591CA3894EC2C8AE6975B107D0 /* checkbox_normal@2x.png */; };
-		8ACF5CB38A00BD44E8B28DB8486AAC58 /* add_photo@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5800CE008D215477DBE4C9B67171018A /* add_photo@3x.png */; };
-		B0A25E32583FFB4AA4CE62BE7B3973D2 /* OMGImagePicker-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = FE1FC11342EEB574D8CB3FD78EAA615E /* OMGImagePicker-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		B17843CA3BD0B50BBD0FD31DAA97BFE5 /* checkbox_selected@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 51B76D63AE7D0744EE46AF0B88A7C21B /* checkbox_selected@2x.png */; };
+		5FEACAFD3EFE0D54EDFB2AE4A534063F /* arrow_down@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = A2D6449A41F6BD6BAED74C1C1D95E37D /* arrow_down@3x.png */; };
+		669857CA78B2857CFCE40CF93DAEA50F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5227A210CE15FB956C43EC30807DF5B9 /* Foundation.framework */; };
+		7346EA1503E0009858724D462D09D707 /* OMGImagePicker.bundle in Resources */ = {isa = PBXBuildFile; fileRef = AB7DBFC48BD4ADF39E3E963CD50FA33F /* OMGImagePicker.bundle */; };
+		8997A3AEB5E9531FFDCD14909A8B5ABF /* checkbox_normal@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = DE559D924DC8CFBDE984C29992748D31 /* checkbox_normal@3x.png */; };
+		9661251F4069701AFA770E9B6A522F6A /* checkbox_selected@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 51B76D63AE7D0744EE46AF0B88A7C21B /* checkbox_selected@2x.png */; };
+		9B8058BC4CAC6F0EBA9BD0A4C455618D /* checkbox_normal.png in Resources */ = {isa = PBXBuildFile; fileRef = 38A72E05013F574C5A5331F33F6B85BB /* checkbox_normal.png */; };
+		A0DCDA8CBBBCC007D82CB4C6AE932C58 /* checkbox_selected.png in Resources */ = {isa = PBXBuildFile; fileRef = E24BBEC58F1D411DE6DA3B67EE4059A4 /* checkbox_selected.png */; };
+		A4EF2CC69D004AA5B7266E6FAEC50B23 /* Photos.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C534942BD93DAE36D7B6358089643F6C /* Photos.framework */; };
+		A74E49C6AD1B2C55CBC574B1A1766A0A /* arrow_down@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3BC4046FF91C9B05583AF38857CFCCA5 /* arrow_down@2x.png */; };
 		B24C93D7DEDFEAC0B6307ED89FB58030 /* Pods-OMGImagePicker_Tests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 709C14E2B7BCEB035AB9BF18C919509B /* Pods-OMGImagePicker_Tests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		B72A6A4A15058969F650480C18628367 /* ImageCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28277B079AA963035DFAAB49BDFA6AF4 /* ImageCollectionViewCell.swift */; };
-		C5278955B52BECA46AD7425E61D962A0 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CBB3DE36805AF21409EC968A9691732F /* Foundation.framework */; };
-		D3477DF444B2A161D1EB922576E62D59 /* arrow_down@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = A2D6449A41F6BD6BAED74C1C1D95E37D /* arrow_down@3x.png */; };
+		D59AFA5371B31A3CFC7DE52BFA8A8EDA /* add_photo@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E687EBBC2FD56BA58073FB06046297EB /* add_photo@2x.png */; };
+		DA25D35E30ED3E4F5F6BA84BB881E605 /* add_photo.png in Resources */ = {isa = PBXBuildFile; fileRef = 94A764192670D3E74067EC4754069894 /* add_photo.png */; };
 		DF2F24CD7B53978E86E637C113B2BB03 /* Pods-OMGImagePicker_Example-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 9581B9253A4A4FAD8EE2C29280DF455F /* Pods-OMGImagePicker_Example-dummy.m */; };
-		E7D1711EADFF3B1B78891A1BB402A1B7 /* OMGImagePicker-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D4028B0EF0E434268A76D4C97462E5B /* OMGImagePicker-dummy.m */; };
-		F03A3E7254FB2DCAAC7534389896BB28 /* AlbumTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C8DBD9172B798221110BB3706C0E397 /* AlbumTableViewController.swift */; };
-		FA2DA7172C0396FB8BFE93A54A5D2302 /* AlbumTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7196386F4541E20F378227DA7B4B2C3E /* AlbumTableViewCell.swift */; };
-		FF1658E3DDEA42ADDDDEDA45B6F1C14B /* arrow_down@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3BC4046FF91C9B05583AF38857CFCCA5 /* arrow_down@2x.png */; };
+		E173EA25CF0CC674468CF22801A54748 /* add_photo@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5800CE008D215477DBE4C9B67171018A /* add_photo@3x.png */; };
+		E64417572A1591200486BA57E7BC41FE /* ImageCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28277B079AA963035DFAAB49BDFA6AF4 /* ImageCollectionViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		C294E0E68286B907B1686E8F80B52730 /* PBXContainerItemProxy */ = {
+		8018F29424D665C0246F2A00729EA02C /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = C2D2A7A679CDA01773A64BC663CF1524;
+			remoteGlobalIDString = 129FB8D2520C0200DB5DC8EF75DB5958;
 			remoteInfo = "OMGImagePicker-OMGImagePicker";
 		};
 		F8C178A0354C2DF343222372D52E5618 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = AFDF9B56D31C7E7FEB6DB35C898AD2D0;
+			remoteGlobalIDString = ABA8268FF41A9613B01943760EC7A0BE;
 			remoteInfo = OMGImagePicker;
 		};
 /* End PBXContainerItemProxy section */
@@ -69,6 +70,7 @@
 		434D8022E26E624207EC67AA02E5768C /* Pods-OMGImagePicker_Tests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-OMGImagePicker_Tests-acknowledgements.plist"; sourceTree = "<group>"; };
 		439FD5591CA3894EC2C8AE6975B107D0 /* checkbox_normal@2x.png */ = {isa = PBXFileReference; includeInIndex = 1; path = "checkbox_normal@2x.png"; sourceTree = "<group>"; };
 		51B76D63AE7D0744EE46AF0B88A7C21B /* checkbox_selected@2x.png */ = {isa = PBXFileReference; includeInIndex = 1; path = "checkbox_selected@2x.png"; sourceTree = "<group>"; };
+		5227A210CE15FB956C43EC30807DF5B9 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
 		5800CE008D215477DBE4C9B67171018A /* add_photo@3x.png */ = {isa = PBXFileReference; includeInIndex = 1; path = "add_photo@3x.png"; sourceTree = "<group>"; };
 		682A28A8D7712140233CE5218E6718A3 /* Pods-OMGImagePicker_Tests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-OMGImagePicker_Tests-dummy.m"; sourceTree = "<group>"; };
 		6F35D6941ABC9EA4F54CC9959DA9FEA5 /* Pods-OMGImagePicker_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-OMGImagePicker_Tests.release.xcconfig"; sourceTree = "<group>"; };
@@ -90,8 +92,8 @@
 		AB7DBFC48BD4ADF39E3E963CD50FA33F /* OMGImagePicker.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; name = OMGImagePicker.bundle; path = OMGImagePicker.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
 		B376E3A70A34C1CDCA6E2F1CF3A6CC35 /* OMGImagePicker-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "OMGImagePicker-prefix.pch"; sourceTree = "<group>"; };
 		C5168E587E21B0C7CD708FFB9A240E38 /* Pods_OMGImagePicker_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_OMGImagePicker_Example.framework; path = "Pods-OMGImagePicker_Example.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		C534942BD93DAE36D7B6358089643F6C /* Photos.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Photos.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.0.sdk/System/Library/Frameworks/Photos.framework; sourceTree = DEVELOPER_DIR; };
 		C614B5E0DBA06D908C542E9FAC69CF08 /* arrow_down.png */ = {isa = PBXFileReference; includeInIndex = 1; path = arrow_down.png; sourceTree = "<group>"; };
-		CBB3DE36805AF21409EC968A9691732F /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
 		CDA5F2C07EDF7AAC7C384D471EF8939A /* OMGImagePicker.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = OMGImagePicker.xcconfig; sourceTree = "<group>"; };
 		D27D29A6B6F4A76AB3F894BDA356E71D /* checkbox_selected@3x.png */ = {isa = PBXFileReference; includeInIndex = 1; path = "checkbox_selected@3x.png"; sourceTree = "<group>"; };
 		D4DD87ECB3B7843F2BEA90BEDF879E75 /* Pods_OMGImagePicker_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_OMGImagePicker_Tests.framework; path = "Pods-OMGImagePicker_Tests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -105,6 +107,22 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		0AB7241A36D1C4DA9B754C6FB20D5207 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2DEFEFE66978A1586AB2B21ABEE2BDB1 /* Foundation.framework in Frameworks */,
+				A4EF2CC69D004AA5B7266E6FAEC50B23 /* Photos.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5C84956E20C17E448D3356428B34FFC7 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		67B4007BDA332BBD606F0FC7A2BABBBF /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -113,26 +131,11 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		8D0E0DD680EFCE384C2008D9885C7914 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				C5278955B52BECA46AD7425E61D962A0 /* Foundation.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		BD8648FDDCF55203F3E7995E96178B8B /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				43E95FF910C200731935E015C4EE53AE /* Foundation.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		BED59AE9CA3BF3C0FE18241AC967CBAA /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -145,6 +148,14 @@
 				C6FF6807299579E9D9907AE1909BBDC0 /* OMGImagePicker */,
 			);
 			name = Resources;
+			sourceTree = "<group>";
+		};
+		433CD3331B6C3787F473C941B61FC68F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				9DA98089F100F47FDCEB3D6F1BCA198E /* iOS */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 		45427AB15DEC50D9BD2A889D7BDC248A /* Support Files */ = {
@@ -160,14 +171,6 @@
 			);
 			name = "Support Files";
 			path = "Example/Pods/Target Support Files/OMGImagePicker";
-			sourceTree = "<group>";
-		};
-		7531C8F8DE19F1AA3C8A7AC97A91DC29 /* iOS */ = {
-			isa = PBXGroup;
-			children = (
-				CBB3DE36805AF21409EC968A9691732F /* Foundation.framework */,
-			);
-			name = iOS;
 			sourceTree = "<group>";
 		};
 		761A2E9EF62B01F0A4FBB33DF1F87788 /* Pods-OMGImagePicker_Example */ = {
@@ -193,10 +196,19 @@
 			children = (
 				93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */,
 				9E2B4F7175BDE8A25F8884D9FEEECF70 /* Development Pods */,
-				BC3CA7F9E30CC8F7E2DD044DD34432FC /* Frameworks */,
+				433CD3331B6C3787F473C941B61FC68F /* Frameworks */,
 				9FC9F2B5C7C47B55327C08E8DEC0EAF5 /* Products */,
 				E927CFA5C013A669E2BDFF25FA70F317 /* Targets Support Files */,
 			);
+			sourceTree = "<group>";
+		};
+		9DA98089F100F47FDCEB3D6F1BCA198E /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				5227A210CE15FB956C43EC30807DF5B9 /* Foundation.framework */,
+				C534942BD93DAE36D7B6358089643F6C /* Photos.framework */,
+			);
+			name = iOS;
 			sourceTree = "<group>";
 		};
 		9E2B4F7175BDE8A25F8884D9FEEECF70 /* Development Pods */ = {
@@ -216,14 +228,6 @@
 				D4DD87ECB3B7843F2BEA90BEDF879E75 /* Pods_OMGImagePicker_Tests.framework */,
 			);
 			name = Products;
-			sourceTree = "<group>";
-		};
-		BC3CA7F9E30CC8F7E2DD044DD34432FC /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				7531C8F8DE19F1AA3C8A7AC97A91DC29 /* iOS */,
-			);
-			name = Frameworks;
 			sourceTree = "<group>";
 		};
 		C6BA38BA4CE38680A64CBA707FF54919 /* OMGImagePicker */ = {
@@ -317,11 +321,11 @@
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
-		0F31AD1ED18CC0AA92A122F7A356F4E5 /* Headers */ = {
+		22FB532D68A3DA8CC9F888C25504A695 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B0A25E32583FFB4AA4CE62BE7B3973D2 /* OMGImagePicker-umbrella.h in Headers */,
+				23110DCE7CFBCB63FB727AAB06890D01 /* OMGImagePicker-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -344,6 +348,23 @@
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
+		129FB8D2520C0200DB5DC8EF75DB5958 /* OMGImagePicker-OMGImagePicker */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = BB278951FFFA40511138534B87AD94A3 /* Build configuration list for PBXNativeTarget "OMGImagePicker-OMGImagePicker" */;
+			buildPhases = (
+				39EAC5624CDD74261FB97667650D67BB /* Sources */,
+				5C84956E20C17E448D3356428B34FFC7 /* Frameworks */,
+				56F969D628E81C19EDBF6353E6E00049 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "OMGImagePicker-OMGImagePicker";
+			productName = "OMGImagePicker-OMGImagePicker";
+			productReference = AB7DBFC48BD4ADF39E3E963CD50FA33F /* OMGImagePicker.bundle */;
+			productType = "com.apple.product-type.bundle";
+		};
 		57B3AB024E55E471DF2FA1518EA732B4 /* Pods-OMGImagePicker_Example */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 8D97E46A654FBA02F2BC1C49D2CE996A /* Build configuration list for PBXNativeTarget "Pods-OMGImagePicker_Example" */;
@@ -362,41 +383,24 @@
 			productReference = C5168E587E21B0C7CD708FFB9A240E38 /* Pods_OMGImagePicker_Example.framework */;
 			productType = "com.apple.product-type.framework";
 		};
-		AFDF9B56D31C7E7FEB6DB35C898AD2D0 /* OMGImagePicker */ = {
+		ABA8268FF41A9613B01943760EC7A0BE /* OMGImagePicker */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 43408EB86784D176FE526D26D8D318CB /* Build configuration list for PBXNativeTarget "OMGImagePicker" */;
+			buildConfigurationList = 5BF9002F3E916B67827CAD0672663B94 /* Build configuration list for PBXNativeTarget "OMGImagePicker" */;
 			buildPhases = (
-				C2120C4D486B654525A4A26091DB1DBC /* Sources */,
-				8D0E0DD680EFCE384C2008D9885C7914 /* Frameworks */,
-				1A13D067804761255A1F9AD0CCA67C08 /* Resources */,
-				0F31AD1ED18CC0AA92A122F7A356F4E5 /* Headers */,
+				ADFC5FE03A2F8D2AEC6651EFD7D7B6EB /* Sources */,
+				0AB7241A36D1C4DA9B754C6FB20D5207 /* Frameworks */,
+				CB043AAF8F7C62E5764257F92469B9C3 /* Resources */,
+				22FB532D68A3DA8CC9F888C25504A695 /* Headers */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				4D3E5D3E65E09CF0ACCA88FA4DE31A57 /* PBXTargetDependency */,
+				92AAEF26663698CA915EDD10AB63A439 /* PBXTargetDependency */,
 			);
 			name = OMGImagePicker;
 			productName = OMGImagePicker;
 			productReference = 903E134E8563D0124545E45858C40C7C /* OMGImagePicker.framework */;
 			productType = "com.apple.product-type.framework";
-		};
-		C2D2A7A679CDA01773A64BC663CF1524 /* OMGImagePicker-OMGImagePicker */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = CB53FCD3F24E796921FC3B8F02830DB7 /* Build configuration list for PBXNativeTarget "OMGImagePicker-OMGImagePicker" */;
-			buildPhases = (
-				266089749637271FDF96565A129A8AF2 /* Sources */,
-				BED59AE9CA3BF3C0FE18241AC967CBAA /* Frameworks */,
-				CA1262FB7CE8E6278FFA01E2C261EA73 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = "OMGImagePicker-OMGImagePicker";
-			productName = "OMGImagePicker-OMGImagePicker";
-			productReference = AB7DBFC48BD4ADF39E3E963CD50FA33F /* OMGImagePicker.bundle */;
-			productType = "com.apple.product-type.bundle";
 		};
 		EBD1FE1E9EFBB01BDEA9DC2949B21C3E /* Pods-OMGImagePicker_Tests */ = {
 			isa = PBXNativeTarget;
@@ -436,8 +440,8 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				AFDF9B56D31C7E7FEB6DB35C898AD2D0 /* OMGImagePicker */,
-				C2D2A7A679CDA01773A64BC663CF1524 /* OMGImagePicker-OMGImagePicker */,
+				ABA8268FF41A9613B01943760EC7A0BE /* OMGImagePicker */,
+				129FB8D2520C0200DB5DC8EF75DB5958 /* OMGImagePicker-OMGImagePicker */,
 				57B3AB024E55E471DF2FA1518EA732B4 /* Pods-OMGImagePicker_Example */,
 				EBD1FE1E9EFBB01BDEA9DC2949B21C3E /* Pods-OMGImagePicker_Tests */,
 			);
@@ -445,48 +449,48 @@
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		1A13D067804761255A1F9AD0CCA67C08 /* Resources */ = {
+		56F969D628E81C19EDBF6353E6E00049 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5B2977E46F7935A1E440CF94B222D79B /* OMGImagePicker.bundle in Resources */,
+				DA25D35E30ED3E4F5F6BA84BB881E605 /* add_photo.png in Resources */,
+				D59AFA5371B31A3CFC7DE52BFA8A8EDA /* add_photo@2x.png in Resources */,
+				E173EA25CF0CC674468CF22801A54748 /* add_photo@3x.png in Resources */,
+				4BB15F9C505082AB698CA759942BCD5E /* arrow_down.png in Resources */,
+				A74E49C6AD1B2C55CBC574B1A1766A0A /* arrow_down@2x.png in Resources */,
+				5FEACAFD3EFE0D54EDFB2AE4A534063F /* arrow_down@3x.png in Resources */,
+				9B8058BC4CAC6F0EBA9BD0A4C455618D /* checkbox_normal.png in Resources */,
+				140A4BE63CC23D096EBEC4CBAAB5F206 /* checkbox_normal@2x.png in Resources */,
+				8997A3AEB5E9531FFDCD14909A8B5ABF /* checkbox_normal@3x.png in Resources */,
+				A0DCDA8CBBBCC007D82CB4C6AE932C58 /* checkbox_selected.png in Resources */,
+				9661251F4069701AFA770E9B6A522F6A /* checkbox_selected@2x.png in Resources */,
+				2983BA7B5DBDDF73C265ED37B231B3ED /* checkbox_selected@3x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		CA1262FB7CE8E6278FFA01E2C261EA73 /* Resources */ = {
+		CB043AAF8F7C62E5764257F92469B9C3 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5A8148F61189CDE59C3CE34A0DF0A67B /* add_photo.png in Resources */,
-				02E1C7689D312B7FAA47ABF4F107BE4F /* add_photo@2x.png in Resources */,
-				8ACF5CB38A00BD44E8B28DB8486AAC58 /* add_photo@3x.png in Resources */,
-				2B2AE2EBEEF9CFE4420E1584B2C20A09 /* arrow_down.png in Resources */,
-				FF1658E3DDEA42ADDDDEDA45B6F1C14B /* arrow_down@2x.png in Resources */,
-				D3477DF444B2A161D1EB922576E62D59 /* arrow_down@3x.png in Resources */,
-				6DD37F0BE8301A49FEF157B10DD9781D /* checkbox_normal.png in Resources */,
-				767995C9031B35A285189361DF53BEEF /* checkbox_normal@2x.png in Resources */,
-				1AD486D31888785F3B0BBD457396D972 /* checkbox_normal@3x.png in Resources */,
-				5C021E704FB6B6AFEDC3B1A49387DF09 /* checkbox_selected.png in Resources */,
-				B17843CA3BD0B50BBD0FD31DAA97BFE5 /* checkbox_selected@2x.png in Resources */,
-				165604DD66C5FBAC3898F2B472CC077B /* checkbox_selected@3x.png in Resources */,
+				7346EA1503E0009858724D462D09D707 /* OMGImagePicker.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		266089749637271FDF96565A129A8AF2 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		304C2E5F2924B1A84FE01890CEAB707E /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				2C1BEE5CE3E6E8E453E39F7809729E9E /* Pods-OMGImagePicker_Tests-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		39EAC5624CDD74261FB97667650D67BB /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -498,15 +502,15 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		C2120C4D486B654525A4A26091DB1DBC /* Sources */ = {
+		ADFC5FE03A2F8D2AEC6651EFD7D7B6EB /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FA2DA7172C0396FB8BFE93A54A5D2302 /* AlbumTableViewCell.swift in Sources */,
-				F03A3E7254FB2DCAAC7534389896BB28 /* AlbumTableViewController.swift in Sources */,
-				B72A6A4A15058969F650480C18628367 /* ImageCollectionViewCell.swift in Sources */,
-				E7D1711EADFF3B1B78891A1BB402A1B7 /* OMGImagePicker-dummy.m in Sources */,
-				3565781B92FC29B9729607104073AC1C /* OMGImagePickerViewController.swift in Sources */,
+				550D6A7760A4E7342C13C28CFD307AC2 /* AlbumTableViewCell.swift in Sources */,
+				134FDEAE44A4007CC30ACB1DAC6B7714 /* AlbumTableViewController.swift in Sources */,
+				E64417572A1591200486BA57E7BC41FE /* ImageCollectionViewCell.swift in Sources */,
+				2863A8B414E7C554313352CD70D37EDB /* OMGImagePicker-dummy.m in Sources */,
+				1D8C152CC6B82BB397945E54A34377F7 /* OMGImagePickerViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -516,47 +520,49 @@
 		2A3E28157CCBE5CE8648F916D99113F9 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = OMGImagePicker;
-			target = AFDF9B56D31C7E7FEB6DB35C898AD2D0 /* OMGImagePicker */;
+			target = ABA8268FF41A9613B01943760EC7A0BE /* OMGImagePicker */;
 			targetProxy = F8C178A0354C2DF343222372D52E5618 /* PBXContainerItemProxy */;
 		};
-		4D3E5D3E65E09CF0ACCA88FA4DE31A57 /* PBXTargetDependency */ = {
+		92AAEF26663698CA915EDD10AB63A439 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = "OMGImagePicker-OMGImagePicker";
-			target = C2D2A7A679CDA01773A64BC663CF1524 /* OMGImagePicker-OMGImagePicker */;
-			targetProxy = C294E0E68286B907B1686E8F80B52730 /* PBXContainerItemProxy */;
+			target = 129FB8D2520C0200DB5DC8EF75DB5958 /* OMGImagePicker-OMGImagePicker */;
+			targetProxy = 8018F29424D665C0246F2A00729EA02C /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
-		4C77A3258DF78AB7A05EBC669A9D19A9 /* Release */ = {
+		3BE0E1D944B2B72989CEF6620B5B2024 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = CDA5F2C07EDF7AAC7C384D471EF8939A /* OMGImagePicker.xcconfig */;
 			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				CONFIGURATION_BUILD_DIR = "$(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/OMGImagePicker";
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_NO_COMMON_BLOCKS = YES;
-				GCC_PREFIX_HEADER = "Target Support Files/OMGImagePicker/OMGImagePicker-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/OMGImagePicker/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				INFOPLIST_FILE = "Target Support Files/OMGImagePicker/ResourceBundle-OMGImagePicker-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/OMGImagePicker/OMGImagePicker.modulemap";
-				MTL_ENABLE_DEBUG_INFO = NO;
 				PRODUCT_NAME = OMGImagePicker;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
+				WRAPPER_EXTENSION = bundle;
+			};
+			name = Debug;
+		};
+		52030DDCDC313CF40C6BDB5629626025 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = CDA5F2C07EDF7AAC7C384D471EF8939A /* OMGImagePicker.xcconfig */;
+			buildSettings = {
+				CONFIGURATION_BUILD_DIR = "$(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/OMGImagePicker";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = "Target Support Files/OMGImagePicker/ResourceBundle-OMGImagePicker-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				PRODUCT_NAME = OMGImagePicker;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				WRAPPER_EXTENSION = bundle;
 			};
 			name = Release;
 		};
@@ -671,6 +677,39 @@
 			};
 			name = Debug;
 		};
+		9D4635DF99988D285F80F9354425F6C6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = CDA5F2C07EDF7AAC7C384D471EF8939A /* OMGImagePicker.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/OMGImagePicker/OMGImagePicker-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/OMGImagePicker/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/OMGImagePicker/OMGImagePicker.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				PRODUCT_NAME = OMGImagePicker;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
 		9E1E4E48AF2EAB23169E611BF694090A /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -715,73 +754,6 @@
 			};
 			name = Debug;
 		};
-		B1D7ADDA109FD7A60FB34878082E21B2 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = CDA5F2C07EDF7AAC7C384D471EF8939A /* OMGImagePicker.xcconfig */;
-			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEBUG_INFORMATION_FORMAT = dwarf;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_NO_COMMON_BLOCKS = YES;
-				GCC_PREFIX_HEADER = "Target Support Files/OMGImagePicker/OMGImagePicker-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/OMGImagePicker/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/OMGImagePicker/OMGImagePicker.modulemap";
-				MTL_ENABLE_DEBUG_INFO = YES;
-				PRODUCT_NAME = OMGImagePicker;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 3.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
-		B240F1041202F5270C007386DA5C37C3 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = CDA5F2C07EDF7AAC7C384D471EF8939A /* OMGImagePicker.xcconfig */;
-			buildSettings = {
-				CONFIGURATION_BUILD_DIR = "$(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/OMGImagePicker";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_NO_COMMON_BLOCKS = YES;
-				INFOPLIST_FILE = "Target Support Files/OMGImagePicker/ResourceBundle-OMGImagePicker-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				PRODUCT_NAME = OMGImagePicker;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				WRAPPER_EXTENSION = bundle;
-			};
-			name = Debug;
-		};
-		C4111E26D11CC0A9D9F4003033A65F3A /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = CDA5F2C07EDF7AAC7C384D471EF8939A /* OMGImagePicker.xcconfig */;
-			buildSettings = {
-				CONFIGURATION_BUILD_DIR = "$(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/OMGImagePicker";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_NO_COMMON_BLOCKS = YES;
-				INFOPLIST_FILE = "Target Support Files/OMGImagePicker/ResourceBundle-OMGImagePicker-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				PRODUCT_NAME = OMGImagePicker;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				WRAPPER_EXTENSION = bundle;
-			};
-			name = Release;
-		};
 		C83A9C76328A5A59912154B1E0F8DB9C /* Release */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 6F35D6941ABC9EA4F54CC9959DA9FEA5 /* Pods-OMGImagePicker_Tests.release.xcconfig */;
@@ -811,6 +783,38 @@
 				PRODUCT_NAME = Pods_OMGImagePicker_Tests;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		EF4C82A3778EB0F6565D47E2A08EC15D /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = CDA5F2C07EDF7AAC7C384D471EF8939A /* OMGImagePicker.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/OMGImagePicker/OMGImagePicker-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/OMGImagePicker/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/OMGImagePicker/OMGImagePicker.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_NAME = OMGImagePicker;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
@@ -864,11 +868,11 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		43408EB86784D176FE526D26D8D318CB /* Build configuration list for PBXNativeTarget "OMGImagePicker" */ = {
+		5BF9002F3E916B67827CAD0672663B94 /* Build configuration list for PBXNativeTarget "OMGImagePicker" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				B1D7ADDA109FD7A60FB34878082E21B2 /* Debug */,
-				4C77A3258DF78AB7A05EBC669A9D19A9 /* Release */,
+				9D4635DF99988D285F80F9354425F6C6 /* Debug */,
+				EF4C82A3778EB0F6565D47E2A08EC15D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -891,11 +895,11 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		CB53FCD3F24E796921FC3B8F02830DB7 /* Build configuration list for PBXNativeTarget "OMGImagePicker-OMGImagePicker" */ = {
+		BB278951FFFA40511138534B87AD94A3 /* Build configuration list for PBXNativeTarget "OMGImagePicker-OMGImagePicker" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				B240F1041202F5270C007386DA5C37C3 /* Debug */,
-				C4111E26D11CC0A9D9F4003033A65F3A /* Release */,
+				3BE0E1D944B2B72989CEF6620B5B2024 /* Debug */,
+				52030DDCDC313CF40C6BDB5629626025 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
