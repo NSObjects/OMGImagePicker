@@ -16,8 +16,10 @@ To run the example project, clone the repo, and run `pod install` from the Examp
 	present(navigationController, animated: true, completion: nil)
 
 OMGImagePickerViewController  has two delegate methods that will inform you what the users are up to:
-	func imagePickerViewController(vc:OMGImagePickerViewController,didFinishPickingWith assets:PHFetchResult<PHAsset>)
-	func imagePickerViewControllerDidCancel(vc:OMGImagePickerViewController)
+```     
+func imagePickerViewController(vc:OMGImagePickerViewController,didFinishPickingWith assets:PHFetchResult<PHAsset>)
+func imagePickerViewControllerDidCancel(vc:OMGImagePickerViewController)
+```
 
 ### Configuration
 	pickViewController.maxNumberOfSelections = 5 // Defaults is 3
