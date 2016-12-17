@@ -28,6 +28,7 @@ class ViewController: UIViewController {
         super.viewWillAppear(animated)
         let scale = UIScreen.main.scale
         let cellSize = flowLayout.itemSize
+        
         thumbnailSize = CGSize(width: cellSize.width * scale, height: cellSize.height * scale)
     }
     
