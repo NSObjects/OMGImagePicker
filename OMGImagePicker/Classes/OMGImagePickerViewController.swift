@@ -245,6 +245,7 @@ private extension OMGImagePickerViewController {
             pctrl.sourceRect = sender.bounds
             present(albumViewController, animated: true, completion: nil)
         }
+        
     }
     
     @objc func done()   {
