@@ -17,6 +17,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var flowLayout: UICollectionViewFlowLayout!
     @IBOutlet weak var collectionView: UICollectionView!
     fileprivate var thumbnailSize: CGSize!
+    
     var fetchResult:PHFetchResult<PHAsset>? {
         didSet {
             collectionView.reloadData()
@@ -48,11 +49,12 @@ class ViewController: UIViewController {
 }
 
  extension ViewController:OMGImagePickerViewControllerDelegate {
-    func imagePickerViewControllerDidCancel(vc: OMGImagePickerViewController) {
+    func imagePickerViewControllerDidCancel(imagePickerViewController vc: OMGImagePickerViewController) {
         vc.dismiss(animated: true, completion: nil)
     }
     
-    func imagePickerViewController(vc: OMGImagePickerViewController, didFinishPickingWith assets: PHFetchResult<PHAsset>) {
+    
+    func imagePickerViewController(imagePickerViewController vc: OMGImagePickerViewController, didFinishPickingWith assets: PHFetchResult<PHAsset>) {
         self.fetchResult = assets
         vc.dismiss(animated: true, completion: nil)
     }

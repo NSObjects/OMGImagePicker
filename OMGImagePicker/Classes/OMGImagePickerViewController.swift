@@ -10,8 +10,8 @@ import UIKit
 import Photos
 
 public protocol OMGImagePickerViewControllerDelegate:NSObjectProtocol {
-    func imagePickerViewController(vc:OMGImagePickerViewController,didFinishPickingWith assets:PHFetchResult<PHAsset>)
-    func imagePickerViewControllerDidCancel(vc:OMGImagePickerViewController)
+    func imagePickerViewController(imagePickerViewController:OMGImagePickerViewController,didFinishPickingWith assets:PHFetchResult<PHAsset>)
+    func imagePickerViewControllerDidCancel(imagePickerViewController:OMGImagePickerViewController)
 }
 
 public class OMGImagePickerViewController: UIViewController {
@@ -19,7 +19,8 @@ public class OMGImagePickerViewController: UIViewController {
     public var maxNumberOfSelections = 3
     public weak var delegate:OMGImagePickerViewControllerDelegate?
     public var rightButtonTitle = "Continue"
-    var activityIndicatorView = UIActivityIndicatorView(activityIndicatorStyle: UIActivityIndicatorViewStyle.gray)
+    
+    fileprivate var activityIndicatorView = UIActivityIndicatorView(activityIndicatorStyle: UIActivityIndicatorViewStyle.gray)
     fileprivate var rightBarButton:UIBarButtonItem!
     fileprivate var collectionView:UICollectionView!
     fileprivate var flowLayout:UICollectionViewFlowLayout!
@@ -43,11 +44,9 @@ public class OMGImagePickerViewController: UIViewController {
     override public func viewDidLoad() {
         super.viewDidLoad()
         viewSetup()
-        
         activityIndicatorView.center = view.center
         activityIndicatorView.hidesWhenStopped = true
         view.addSubview(activityIndicatorView)
-        
         PHPhotoLibrary.shared().register(self)
         if fetchResult == nil {
             let allPhotosOptions = PHFetchOptions()
@@ -219,8 +218,7 @@ private extension OMGImagePickerViewController {
         navigationItem.leftBarButtonItem = lefeBarButton
         
         let albumSelectButton = UIButton(type: .custom)
-        albumSelectButton.setTitle(" PHOTO", for: .normal)
-        
+        albumSelectButton.setTitle(" All Photo", for: .normal)
         albumSelectButton.setTitleColor(UIColor.black, for: .normal)
         let bundle = Bundle(for: ImageCollectionViewCell.self)
         let url = bundle.url(forResource: "OMGImagePicker", withExtension: "bundle")
@@ -253,11 +251,11 @@ private extension OMGImagePickerViewController {
             return
         }
         let assets = PHAsset.fetchAssets(withLocalIdentifiers: selectionPhotoIdentifier, options: nil)
-        delegate?.imagePickerViewController(vc: self, didFinishPickingWith: assets)
+        delegate?.imagePickerViewController(imagePickerViewController: self, didFinishPickingWith: assets)
     }
     
     @objc func cancel () {
-        delegate?.imagePickerViewControllerDidCancel(vc: self)
+        delegate?.imagePickerViewControllerDidCancel(imagePickerViewController: self)
     }
 }
 
