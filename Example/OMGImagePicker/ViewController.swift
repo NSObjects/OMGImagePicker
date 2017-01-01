@@ -39,12 +39,23 @@ class ViewController: UIViewController {
     }
     
     @IBAction func showImagePickerView(_ sender: Any) {
-        let pickViewController = OMGImagePickerViewController()
-        pickViewController.delegate = self
-        pickViewController.rightButtonTitle = "Done"
-        pickViewController.maxNumberOfSelections = 5
-        let navigationController = UINavigationController(rootViewController: pickViewController)
-        present(navigationController, animated: true, completion: nil)
+        present(omg_present: self, delegate: self) {
+            let alertController = UIAlertController(title: "", message: "Allow OMGImagePicker to access your album", preferredStyle: .alert)
+            let enable = UIAlertAction(title: "Allow", style: .default, handler: { (action) in
+                alertController.dismiss(animated: true, completion: nil)
+                let url = NSURL(string: UIApplicationOpenSettingsURLString) as! URL
+                if #available(iOS 10.0, *) {
+                    UIApplication.shared.open(url, options: [:], completionHandler: nil)
+                } else if #available(iOS 9.0, *) {
+                    UIApplication.shared.openURL(url)
+                }
+            })
+            
+            let cancel = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
+            alertController.addAction(enable)
+            alertController.addAction(cancel)
+            self.present(alertController, animated: true, completion: nil)
+        }
     }
 }
 

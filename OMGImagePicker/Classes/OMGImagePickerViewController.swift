@@ -9,6 +9,56 @@
 import UIKit
 import Photos
 
+public struct OMGImagePickerSetting {
+    var rightBarTitle  = "Done"
+    var leftBarTitle   = "Cancel"
+    var navigationBarColor = UIColor.white
+    var navigationBarTranslucent = false
+    var maxNumberOfSelections = 5
+}
+
+public extension UIViewController {
+
+  public func present(omg_present viewController: UIViewController,
+                       delegate: OMGImagePickerViewControllerDelegate,
+                       setting: OMGImagePickerSetting? = nil,
+                       notAuthorizedHandle:(()->Void)? = nil) {
+        authorize { (authorized) in
+            if authorized {
+                let pickViewController = OMGImagePickerViewController()
+                pickViewController.delegate = delegate
+                let navigationController = UINavigationController(rootViewController: pickViewController)
+                if let setting = setting {
+                    pickViewController.setting = setting
+                }
+                
+                viewController.present(navigationController, animated: true, completion: nil)
+            } else {
+               notAuthorizedHandle?()
+            }
+        }
+    }
+
+    fileprivate func authorize(_ status: PHAuthorizationStatus = PHPhotoLibrary.authorizationStatus(),
+                               completion: @escaping (_ authorized: Bool) -> Void) {
+        switch status {
+        case .authorized:
+                completion(true)
+        case .notDetermined:
+            PHPhotoLibrary.requestAuthorization({ (status) -> Void in
+                DispatchQueue.main.async(execute: { () -> Void in
+                    self.authorize(status, completion: completion)
+                })
+            })
+        default: ()
+        DispatchQueue.main.async(execute: { () -> Void in
+            completion(false)
+        })
+        }
+    }
+}
+
+
 public protocol OMGImagePickerViewControllerDelegate:NSObjectProtocol {
     func imagePickerViewController(imagePickerViewController:OMGImagePickerViewController,didFinishPickingWith assets:PHFetchResult<PHAsset>)
     func imagePickerViewControllerDidCancel(imagePickerViewController:OMGImagePickerViewController)
@@ -16,10 +66,9 @@ public protocol OMGImagePickerViewControllerDelegate:NSObjectProtocol {
 
 public class OMGImagePickerViewController: UIViewController {
     
-    public var maxNumberOfSelections = 3
-    public weak var delegate:OMGImagePickerViewControllerDelegate?
-    public var rightButtonTitle = "Continue"
-    
+    fileprivate weak var delegate:OMGImagePickerViewControllerDelegate?
+ 
+    fileprivate var setting = OMGImagePickerSetting()
     fileprivate var activityIndicatorView = UIActivityIndicatorView(activityIndicatorStyle: UIActivityIndicatorViewStyle.gray)
     fileprivate var rightBarButton:UIBarButtonItem!
     fileprivate var collectionView:UICollectionView!
@@ -75,7 +124,7 @@ extension OMGImagePickerViewController:UICollectionViewDataSource {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: String(describing: ImageCollectionViewCell.self), for: indexPath) as? ImageCollectionViewCell
             else { fatalError("unexpected cell in collection view") }
         if indexPath.row == 0 {
-            if selectionPhotoIdentifier.count >= maxNumberOfSelections {
+            if selectionPhotoIdentifier.count >= setting.maxNumberOfSelections {
                 cell.setCell(disable: true)
             }
             cell.checkBoxImageView.isHidden = true
@@ -87,7 +136,7 @@ extension OMGImagePickerViewController:UICollectionViewDataSource {
             cell.checkBoxImageView.isHidden = false
             cell.representedAssetIdentifier = asset.localIdentifier
             cell.isSelected = false
-            if selectionPhotoIdentifier.count >= maxNumberOfSelections {
+            if selectionPhotoIdentifier.count >= setting.maxNumberOfSelections {
                 if !selectionPhotoIdentifier.contains(asset.localIdentifier) {
                     cell.setCell(disable: true)
                 }
@@ -117,7 +166,7 @@ extension OMGImagePickerViewController:UICollectionViewDataSource {
 // MARK: - UICollectionViewDelegate
 extension OMGImagePickerViewController:UICollectionViewDelegate {
     public func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        guard selectionPhotoIdentifier.count < maxNumberOfSelections else {
+        guard selectionPhotoIdentifier.count < setting.maxNumberOfSelections else {
             return
         }
         
@@ -132,7 +181,7 @@ extension OMGImagePickerViewController:UICollectionViewDelegate {
             #endif
         } else if let cell = collectionView.cellForItem(at: indexPath) as?  ImageCollectionViewCell {
             selectionPhotoIdentifier.append(cell.representedAssetIdentifier)
-            if selectionPhotoIdentifier.count >= maxNumberOfSelections {
+            if selectionPhotoIdentifier.count >= setting.maxNumberOfSelections {
                 collectionView.visibleCells.forEach{ cell in
                     if let imageCell = cell as? ImageCollectionViewCell {
                         if !selectionPhotoIdentifier.contains(imageCell.representedAssetIdentifier) {
@@ -191,6 +240,8 @@ extension OMGImagePickerViewController:UINavigationControllerDelegate,UIImagePic
 // MARK: - Private Method
 private extension OMGImagePickerViewController {
     func viewSetup()  {
+        navigationController?.navigationBar.barTintColor = setting.navigationBarColor
+        navigationController?.navigationBar.isTranslucent = setting.navigationBarTranslucent
         flowLayout = UICollectionViewFlowLayout()
         let itemSize = view.frame.width / 4 - 1
         flowLayout.itemSize =  CGSize(width: itemSize, height: itemSize)
@@ -208,12 +259,12 @@ private extension OMGImagePickerViewController {
         view.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "V:|-0-[collectionView]-0-|", options: NSLayoutFormatOptions(rawValue: 0), metrics: nil, views: ["collectionView":collectionView]))
         view.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "H:|-0-[collectionView]-0-|", options: NSLayoutFormatOptions(rawValue: 0), metrics: nil, views: ["collectionView":collectionView]))
         
-        let rightBarButton = UIBarButtonItem(title: rightButtonTitle, style: .plain, target: self, action: .rightBarButtonAction)
+        let rightBarButton = UIBarButtonItem(title: setting.rightBarTitle, style: .plain, target: self, action: .rightBarButtonAction)
         rightBarButton.tintColor = UIColor.gray
         navigationItem.rightBarButtonItem = rightBarButton
         self.rightBarButton = rightBarButton
         
-        let lefeBarButton = UIBarButtonItem(title: "Cancel", style: .plain, target: self, action: .leftBarButtonAction)
+        let lefeBarButton = UIBarButtonItem(title: setting.leftBarTitle, style: .plain, target: self, action: .leftBarButtonAction)
         lefeBarButton.tintColor = UIColor.red
         navigationItem.leftBarButtonItem = lefeBarButton
         
