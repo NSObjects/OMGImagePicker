@@ -9,14 +9,6 @@
 import UIKit
 import Photos
 
-public struct OMGImagePickerSetting {
-    var rightBarTitle  = "Done"
-    var leftBarTitle   = "Cancel"
-    var navigationBarColor = UIColor.white
-    var navigationBarTranslucent = false
-    var maxNumberOfSelections = 5
-}
-
 public extension UIViewController {
 
   public func present(omg_present viewController: UIViewController,
@@ -124,7 +116,7 @@ extension OMGImagePickerViewController:UICollectionViewDataSource {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: String(describing: ImageCollectionViewCell.self), for: indexPath) as? ImageCollectionViewCell
             else { fatalError("unexpected cell in collection view") }
         if indexPath.row == 0 {
-            if selectionPhotoIdentifier.count >= setting.maxNumberOfSelections {
+            if selectionPhotoIdentifier.count >= setting.maxNumberOfSelection {
                 cell.setCell(disable: true)
             }
             cell.checkBoxImageView.isHidden = true
@@ -136,7 +128,7 @@ extension OMGImagePickerViewController:UICollectionViewDataSource {
             cell.checkBoxImageView.isHidden = false
             cell.representedAssetIdentifier = asset.localIdentifier
             cell.isSelected = false
-            if selectionPhotoIdentifier.count >= setting.maxNumberOfSelections {
+            if selectionPhotoIdentifier.count >= setting.maxNumberOfSelection {
                 if !selectionPhotoIdentifier.contains(asset.localIdentifier) {
                     cell.setCell(disable: true)
                 }
@@ -166,7 +158,7 @@ extension OMGImagePickerViewController:UICollectionViewDataSource {
 // MARK: - UICollectionViewDelegate
 extension OMGImagePickerViewController:UICollectionViewDelegate {
     public func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        guard selectionPhotoIdentifier.count < setting.maxNumberOfSelections else {
+        guard selectionPhotoIdentifier.count < setting.maxNumberOfSelection else {
             return
         }
         
@@ -181,7 +173,7 @@ extension OMGImagePickerViewController:UICollectionViewDelegate {
             #endif
         } else if let cell = collectionView.cellForItem(at: indexPath) as?  ImageCollectionViewCell {
             selectionPhotoIdentifier.append(cell.representedAssetIdentifier)
-            if selectionPhotoIdentifier.count >= setting.maxNumberOfSelections {
+            if selectionPhotoIdentifier.count >= setting.maxNumberOfSelection {
                 collectionView.visibleCells.forEach{ cell in
                     if let imageCell = cell as? ImageCollectionViewCell {
                         if !selectionPhotoIdentifier.contains(imageCell.representedAssetIdentifier) {

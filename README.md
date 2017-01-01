@@ -10,10 +10,12 @@
 To run the example project, clone the repo, and run `pod install` from the Example directory first.
 
 ## Usage
-	let pickViewController = OMGImagePickerViewController()
-	pickViewController.delegate = self
-	let navigationController = UINavigationController(rootViewController: pickViewController)
-	present(navigationController, animated: true, completion: nil)
+`present(omg_present: self, delegate: self)`
+
+User does not authorize processing
+`present(omg_present: self, delegate: self) {
+	//to do
+}`
 
 OMGImagePickerViewController  has two delegate methods that will inform you what the users are up to:
 ```     
@@ -22,8 +24,25 @@ func imagePickerViewControllerDidCancel(vc:OMGImagePickerViewController)
 ```
 
 ### Configuration
-	pickViewController.maxNumberOfSelections = 5 // Defaults is 3
-	pickViewController.rightButtonTitle = "Done" // Default is Continue
+`var setting = OMGImagePickerSetting()
+setting.rightBarTitle = "Continue"
+setting.maxNumberOfSelection = 5
+present(omg_present: self, delegate: self,setting:setting) {
+}`
+
+```
+ setting.navigationBarColor = UIColor.brown
+ setting.navigationBarTranslucent = false
+```
+![disable](http://linblog.oss-cn-hangzhou.aliyuncs.com/lALOla_8H2fNAeE_481_103.png_620x10000q90g.jpg)
+
+` setting.navigationBarTranslucent = true`
+
+![true](http://linblog.oss-cn-hangzhou.aliyuncs.com/lALOla_83GLNAfA_496_98.png_620x10000q90g.jpg)
+
+##Requirements
+* Swift3
+* iOS8.0
 
 ## Installation
 
@@ -52,3 +71,5 @@ OMGImagePicker is available under the MIT license. See the LICENSE file for more
 [image-2]:	https://img.shields.io/cocoapods/v/OMGImagePicker.svg?style=flat
 [image-3]:	https://img.shields.io/cocoapods/l/OMGImagePicker.svg?style=flat
 [image-4]:	https://img.shields.io/cocoapods/p/OMGImagePicker.svg?style=flat
+
+

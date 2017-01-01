@@ -39,7 +39,12 @@ class ViewController: UIViewController {
     }
     
     @IBAction func showImagePickerView(_ sender: Any) {
-        present(omg_present: self, delegate: self) {
+        
+       var setting = OMGImagePickerSetting()
+        setting.rightBarTitle = "Continue"
+        setting.maxNumberOfSelection = 5
+
+        present(omg_present: self, delegate: self,setting:setting) {
             let alertController = UIAlertController(title: "", message: "Allow OMGImagePicker to access your album", preferredStyle: .alert)
             let enable = UIAlertAction(title: "Allow", style: .default, handler: { (action) in
                 alertController.dismiss(animated: true, completion: nil)

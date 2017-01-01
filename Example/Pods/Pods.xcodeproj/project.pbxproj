@@ -28,6 +28,7 @@
 		A0DCDA8CBBBCC007D82CB4C6AE932C58 /* checkbox_selected.png in Resources */ = {isa = PBXBuildFile; fileRef = E24BBEC58F1D411DE6DA3B67EE4059A4 /* checkbox_selected.png */; };
 		A4EF2CC69D004AA5B7266E6FAEC50B23 /* Photos.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C534942BD93DAE36D7B6358089643F6C /* Photos.framework */; };
 		A74E49C6AD1B2C55CBC574B1A1766A0A /* arrow_down@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3BC4046FF91C9B05583AF38857CFCCA5 /* arrow_down@2x.png */; };
+		ABC54A751E18F6E6002ABF8E /* Setting.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABC54A741E18F6E6002ABF8E /* Setting.swift */; };
 		B24C93D7DEDFEAC0B6307ED89FB58030 /* Pods-OMGImagePicker_Tests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 709C14E2B7BCEB035AB9BF18C919509B /* Pods-OMGImagePicker_Tests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		D59AFA5371B31A3CFC7DE52BFA8A8EDA /* add_photo@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E687EBBC2FD56BA58073FB06046297EB /* add_photo@2x.png */; };
 		DA25D35E30ED3E4F5F6BA84BB881E605 /* add_photo.png in Resources */ = {isa = PBXBuildFile; fileRef = 94A764192670D3E74067EC4754069894 /* add_photo.png */; };
@@ -54,24 +55,24 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		00FC14D4E0857370335BD8F2C736A35F /* OMGImagePicker.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = OMGImagePicker.modulemap; sourceTree = "<group>"; };
+		00FC14D4E0857370335BD8F2C736A35F /* OMGImagePicker.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = OMGImagePicker.modulemap; sourceTree = "<group>"; };
 		11569FBAC9D638E3DA3DF6FC4DDCE9CE /* Pods-OMGImagePicker_Tests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-OMGImagePicker_Tests-frameworks.sh"; sourceTree = "<group>"; };
 		156F2F21B695C0F024EFF11D5D3ED1AE /* OMGImagePickerViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = OMGImagePickerViewController.swift; sourceTree = "<group>"; };
 		1A0C2E83E0CAF225DACD096A8C5BC531 /* Pods-OMGImagePicker_Example-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-OMGImagePicker_Example-acknowledgements.plist"; sourceTree = "<group>"; };
-		1A3F2C237E2E02AE0CDC27AD6732DB02 /* Pods-OMGImagePicker_Example.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = "Pods-OMGImagePicker_Example.modulemap"; sourceTree = "<group>"; };
+		1A3F2C237E2E02AE0CDC27AD6732DB02 /* Pods-OMGImagePicker_Example.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-OMGImagePicker_Example.modulemap"; sourceTree = "<group>"; };
 		28277B079AA963035DFAAB49BDFA6AF4 /* ImageCollectionViewCell.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ImageCollectionViewCell.swift; sourceTree = "<group>"; };
 		2FEFBBB0011D36AD9B6ECFF46CEE0E68 /* Pods-OMGImagePicker_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-OMGImagePicker_Example.release.xcconfig"; sourceTree = "<group>"; };
-		35A1D54834749BFA140A7F67087D9F9F /* Pods-OMGImagePicker_Tests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = "Pods-OMGImagePicker_Tests.modulemap"; sourceTree = "<group>"; };
+		35A1D54834749BFA140A7F67087D9F9F /* Pods-OMGImagePicker_Tests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-OMGImagePicker_Tests.modulemap"; sourceTree = "<group>"; };
 		381DDCA6B69E76883B774E8207301A69 /* Pods-OMGImagePicker_Example-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-OMGImagePicker_Example-resources.sh"; sourceTree = "<group>"; };
-		38A72E05013F574C5A5331F33F6B85BB /* checkbox_normal.png */ = {isa = PBXFileReference; includeInIndex = 1; path = checkbox_normal.png; sourceTree = "<group>"; };
+		38A72E05013F574C5A5331F33F6B85BB /* checkbox_normal.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; path = checkbox_normal.png; sourceTree = "<group>"; };
 		3AB2B50DFC9E6D5D10F9A9C8F050B527 /* Pods-OMGImagePicker_Example-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-OMGImagePicker_Example-umbrella.h"; sourceTree = "<group>"; };
 		3AC1281517075CB88D1C7B4E4D6690A1 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		3BC4046FF91C9B05583AF38857CFCCA5 /* arrow_down@2x.png */ = {isa = PBXFileReference; includeInIndex = 1; path = "arrow_down@2x.png"; sourceTree = "<group>"; };
+		3BC4046FF91C9B05583AF38857CFCCA5 /* arrow_down@2x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; path = "arrow_down@2x.png"; sourceTree = "<group>"; };
 		434D8022E26E624207EC67AA02E5768C /* Pods-OMGImagePicker_Tests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-OMGImagePicker_Tests-acknowledgements.plist"; sourceTree = "<group>"; };
-		439FD5591CA3894EC2C8AE6975B107D0 /* checkbox_normal@2x.png */ = {isa = PBXFileReference; includeInIndex = 1; path = "checkbox_normal@2x.png"; sourceTree = "<group>"; };
-		51B76D63AE7D0744EE46AF0B88A7C21B /* checkbox_selected@2x.png */ = {isa = PBXFileReference; includeInIndex = 1; path = "checkbox_selected@2x.png"; sourceTree = "<group>"; };
+		439FD5591CA3894EC2C8AE6975B107D0 /* checkbox_normal@2x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; path = "checkbox_normal@2x.png"; sourceTree = "<group>"; };
+		51B76D63AE7D0744EE46AF0B88A7C21B /* checkbox_selected@2x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; path = "checkbox_selected@2x.png"; sourceTree = "<group>"; };
 		5227A210CE15FB956C43EC30807DF5B9 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
-		5800CE008D215477DBE4C9B67171018A /* add_photo@3x.png */ = {isa = PBXFileReference; includeInIndex = 1; path = "add_photo@3x.png"; sourceTree = "<group>"; };
+		5800CE008D215477DBE4C9B67171018A /* add_photo@3x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; path = "add_photo@3x.png"; sourceTree = "<group>"; };
 		682A28A8D7712140233CE5218E6718A3 /* Pods-OMGImagePicker_Tests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-OMGImagePicker_Tests-dummy.m"; sourceTree = "<group>"; };
 		6F35D6941ABC9EA4F54CC9959DA9FEA5 /* Pods-OMGImagePicker_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-OMGImagePicker_Tests.release.xcconfig"; sourceTree = "<group>"; };
 		7031A28E841C888AAD2B170B8AA5E7A4 /* Pods-OMGImagePicker_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-OMGImagePicker_Tests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -81,27 +82,28 @@
 		87FB007CD2CBFFC2CA7988D4F2C8986B /* Pods-OMGImagePicker_Example-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-OMGImagePicker_Example-acknowledgements.markdown"; sourceTree = "<group>"; };
 		888BC7F2D35876A80E91D503A0879DDE /* Pods-OMGImagePicker_Example-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-OMGImagePicker_Example-frameworks.sh"; sourceTree = "<group>"; };
 		8D4028B0EF0E434268A76D4C97462E5B /* OMGImagePicker-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "OMGImagePicker-dummy.m"; sourceTree = "<group>"; };
-		903E134E8563D0124545E45858C40C7C /* OMGImagePicker.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = OMGImagePicker.framework; path = OMGImagePicker.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		94A764192670D3E74067EC4754069894 /* add_photo.png */ = {isa = PBXFileReference; includeInIndex = 1; path = add_photo.png; sourceTree = "<group>"; };
+		903E134E8563D0124545E45858C40C7C /* OMGImagePicker.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = OMGImagePicker.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		94A764192670D3E74067EC4754069894 /* add_photo.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; path = add_photo.png; sourceTree = "<group>"; };
 		9581B9253A4A4FAD8EE2C29280DF455F /* Pods-OMGImagePicker_Example-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-OMGImagePicker_Example-dummy.m"; sourceTree = "<group>"; };
 		9918C43B5305D0415726A7EA891314EB /* Pods-OMGImagePicker_Tests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-OMGImagePicker_Tests-acknowledgements.markdown"; sourceTree = "<group>"; };
 		9B9D897765709891E774262219DF259E /* Pods-OMGImagePicker_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-OMGImagePicker_Example.debug.xcconfig"; sourceTree = "<group>"; };
-		A2D6449A41F6BD6BAED74C1C1D95E37D /* arrow_down@3x.png */ = {isa = PBXFileReference; includeInIndex = 1; path = "arrow_down@3x.png"; sourceTree = "<group>"; };
+		A2D6449A41F6BD6BAED74C1C1D95E37D /* arrow_down@3x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; path = "arrow_down@3x.png"; sourceTree = "<group>"; };
 		A4412D9756A98304F125F4841152493F /* ResourceBundle-OMGImagePicker-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "ResourceBundle-OMGImagePicker-Info.plist"; sourceTree = "<group>"; };
-		AB7DBFC48BD4ADF39E3E963CD50FA33F /* OMGImagePicker.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; name = OMGImagePicker.bundle; path = OMGImagePicker.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
+		AB7DBFC48BD4ADF39E3E963CD50FA33F /* OMGImagePicker.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = OMGImagePicker.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
+		ABC54A741E18F6E6002ABF8E /* Setting.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Setting.swift; sourceTree = "<group>"; };
 		B376E3A70A34C1CDCA6E2F1CF3A6CC35 /* OMGImagePicker-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "OMGImagePicker-prefix.pch"; sourceTree = "<group>"; };
-		C5168E587E21B0C7CD708FFB9A240E38 /* Pods_OMGImagePicker_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_OMGImagePicker_Example.framework; path = "Pods-OMGImagePicker_Example.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		C5168E587E21B0C7CD708FFB9A240E38 /* Pods_OMGImagePicker_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_OMGImagePicker_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C534942BD93DAE36D7B6358089643F6C /* Photos.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Photos.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.0.sdk/System/Library/Frameworks/Photos.framework; sourceTree = DEVELOPER_DIR; };
-		C614B5E0DBA06D908C542E9FAC69CF08 /* arrow_down.png */ = {isa = PBXFileReference; includeInIndex = 1; path = arrow_down.png; sourceTree = "<group>"; };
+		C614B5E0DBA06D908C542E9FAC69CF08 /* arrow_down.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; path = arrow_down.png; sourceTree = "<group>"; };
 		CDA5F2C07EDF7AAC7C384D471EF8939A /* OMGImagePicker.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = OMGImagePicker.xcconfig; sourceTree = "<group>"; };
-		D27D29A6B6F4A76AB3F894BDA356E71D /* checkbox_selected@3x.png */ = {isa = PBXFileReference; includeInIndex = 1; path = "checkbox_selected@3x.png"; sourceTree = "<group>"; };
-		D4DD87ECB3B7843F2BEA90BEDF879E75 /* Pods_OMGImagePicker_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_OMGImagePicker_Tests.framework; path = "Pods-OMGImagePicker_Tests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
-		DE559D924DC8CFBDE984C29992748D31 /* checkbox_normal@3x.png */ = {isa = PBXFileReference; includeInIndex = 1; path = "checkbox_normal@3x.png"; sourceTree = "<group>"; };
-		E24BBEC58F1D411DE6DA3B67EE4059A4 /* checkbox_selected.png */ = {isa = PBXFileReference; includeInIndex = 1; path = checkbox_selected.png; sourceTree = "<group>"; };
+		D27D29A6B6F4A76AB3F894BDA356E71D /* checkbox_selected@3x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; path = "checkbox_selected@3x.png"; sourceTree = "<group>"; };
+		D4DD87ECB3B7843F2BEA90BEDF879E75 /* Pods_OMGImagePicker_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_OMGImagePicker_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		DE559D924DC8CFBDE984C29992748D31 /* checkbox_normal@3x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; path = "checkbox_normal@3x.png"; sourceTree = "<group>"; };
+		E24BBEC58F1D411DE6DA3B67EE4059A4 /* checkbox_selected.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; path = checkbox_selected.png; sourceTree = "<group>"; };
 		E49534836F534278345A5D35C26C272E /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E5252F76037DB55DC0D78FD0A60301E5 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		E687EBBC2FD56BA58073FB06046297EB /* add_photo@2x.png */ = {isa = PBXFileReference; includeInIndex = 1; path = "add_photo@2x.png"; sourceTree = "<group>"; };
+		E687EBBC2FD56BA58073FB06046297EB /* add_photo@2x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; path = "add_photo@2x.png"; sourceTree = "<group>"; };
 		E9559AF6A1F57B87B60843D6AA1639CB /* Pods-OMGImagePicker_Tests-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-OMGImagePicker_Tests-resources.sh"; sourceTree = "<group>"; };
 		FE1FC11342EEB574D8CB3FD78EAA615E /* OMGImagePicker-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "OMGImagePicker-umbrella.h"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -235,7 +237,6 @@
 			children = (
 				E94BF80604E025B94A210DB773B86567 /* Classes */,
 			);
-			name = OMGImagePicker;
 			path = OMGImagePicker;
 			sourceTree = "<group>";
 		};
@@ -244,7 +245,6 @@
 			children = (
 				E11E3D8CCB2827B9619C683D47986C9E /* Assets */,
 			);
-			name = OMGImagePicker;
 			path = OMGImagePicker;
 			sourceTree = "<group>";
 		};
@@ -282,7 +282,6 @@
 				51B76D63AE7D0744EE46AF0B88A7C21B /* checkbox_selected@2x.png */,
 				D27D29A6B6F4A76AB3F894BDA356E71D /* checkbox_selected@3x.png */,
 			);
-			name = Assets;
 			path = Assets;
 			sourceTree = "<group>";
 		};
@@ -302,8 +301,8 @@
 				7C8DBD9172B798221110BB3706C0E397 /* AlbumTableViewController.swift */,
 				28277B079AA963035DFAAB49BDFA6AF4 /* ImageCollectionViewCell.swift */,
 				156F2F21B695C0F024EFF11D5D3ED1AE /* OMGImagePickerViewController.swift */,
+				ABC54A741E18F6E6002ABF8E /* Setting.swift */,
 			);
-			name = Classes;
 			path = Classes;
 			sourceTree = "<group>";
 		};
@@ -508,6 +507,7 @@
 			files = (
 				550D6A7760A4E7342C13C28CFD307AC2 /* AlbumTableViewCell.swift in Sources */,
 				134FDEAE44A4007CC30ACB1DAC6B7714 /* AlbumTableViewController.swift in Sources */,
+				ABC54A751E18F6E6002ABF8E /* Setting.swift in Sources */,
 				E64417572A1591200486BA57E7BC41FE /* ImageCollectionViewCell.swift in Sources */,
 				2863A8B414E7C554313352CD70D37EDB /* OMGImagePicker-dummy.m in Sources */,
 				1D8C152CC6B82BB397945E54A34377F7 /* OMGImagePickerViewController.swift in Sources */,
