@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name             = 'OMGImagePicker'
-  s.version          = '2.0'
+  s.version          = '1.0.0'
   s.summary          = 'A image picker library.'
 
   s.description      = <<-DESC
