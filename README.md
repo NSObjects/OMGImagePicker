@@ -10,12 +10,18 @@
 To run the example project, clone the repo, and run `pod install` from the Example directory first.
 
 ## Usage
-`present(omg_present: self, delegate: self)`
+```
+import OMGImagePicker
+
+present(omg_present: self, delegate: self)
+```
 
 User does not authorize processing
-`present(omg_present: self, delegate: self) {
+```
+present(omg_present: self, delegate: self) {
 	//to do
-}`
+}
+```
 
 OMGImagePickerViewController  has two delegate methods that will inform you what the users are up to:
 ```     
@@ -24,11 +30,13 @@ func imagePickerViewControllerDidCancel(vc:OMGImagePickerViewController)
 ```
 
 ### Configuration
-`var setting = OMGImagePickerSetting()
+```
+var setting = OMGImagePickerSetting()
 setting.rightBarTitle = "Continue"
 setting.maxNumberOfSelection = 5
 present(omg_present: self, delegate: self,setting:setting) {
-}`
+}
+```
 
 ```
  setting.navigationBarColor = UIColor.brown
@@ -38,7 +46,7 @@ present(omg_present: self, delegate: self,setting:setting) {
 
 ` setting.navigationBarTranslucent = true`
 
-![true](http://linblog.oss-cn-hangzhou.aliyuncs.com/lALOla_83GLNAfA_496_98.png_620x10000q90g.jpg)
+![enable](http://linblog.oss-cn-hangzhou.aliyuncs.com/lALOla_83GLNAfA_496_98.png_620x10000q90g.jpg)
 
 ##Requirements
 * Swift3
