@@ -44,23 +44,7 @@ class ViewController: UIViewController {
         setting.rightBarTitle = "Continue"
         setting.maxNumberOfSelection = 5
 
-        present(omg_present: self, delegate: self,setting:setting) {
-            let alertController = UIAlertController(title: "", message: "Allow OMGImagePicker to access your album", preferredStyle: .alert)
-            let enable = UIAlertAction(title: "Allow", style: .default, handler: { (action) in
-                alertController.dismiss(animated: true, completion: nil)
-                let url = NSURL(string: UIApplicationOpenSettingsURLString) as! URL
-                if #available(iOS 10.0, *) {
-                    UIApplication.shared.open(url, options: [:], completionHandler: nil)
-                } else if #available(iOS 9.0, *) {
-                    UIApplication.shared.openURL(url)
-                }
-            })
-            
-            let cancel = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
-            alertController.addAction(enable)
-            alertController.addAction(cancel)
-            self.present(alertController, animated: true, completion: nil)
-        }
+        present(omg_present: self, delegate: self,setting:setting)
     }
 }
 
@@ -73,6 +57,10 @@ class ViewController: UIViewController {
     func imagePickerViewController(imagePickerViewController vc: OMGImagePickerViewController, didFinishPickingWith assets: PHFetchResult<PHAsset>) {
         self.fetchResult = assets
         vc.dismiss(animated: true, completion: nil)
+    }
+    
+    func userDeniedAuthPhotosView(imagePickerViewController: OMGImagePickerViewController) -> UIView? {
+        return nil
     }
  }
  

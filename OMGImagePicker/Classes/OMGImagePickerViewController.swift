@@ -10,69 +10,40 @@ import UIKit
 import Photos
 
 public extension UIViewController {
-
-  public func present(omg_present viewController: UIViewController,
-                       delegate: OMGImagePickerViewControllerDelegate,
-                       setting: OMGImagePickerSetting? = nil,
-                       notAuthorizedHandle:(()->Void)? = nil) {
-        authorize { (authorized) in
-            if authorized {
-                let pickViewController = OMGImagePickerViewController()
-                pickViewController.delegate = delegate
-                let navigationController = UINavigationController(rootViewController: pickViewController)
-                if let setting = setting {
-                    pickViewController.setting = setting
-                }
-                
-                viewController.present(navigationController, animated: true, completion: nil)
-            } else {
-               notAuthorizedHandle?()
-            }
+    public func present(omg_present viewController: UIViewController,
+                        delegate: OMGImagePickerViewControllerDelegate,
+                        setting: OMGImagePickerSetting? = nil) {
+        let pickViewController = OMGImagePickerViewController()
+        pickViewController.delegate = delegate
+        let navigationController = UINavigationController(rootViewController: pickViewController)
+        if let setting = setting {
+            pickViewController.setting = setting
         }
-    }
-
-    fileprivate func authorize(_ status: PHAuthorizationStatus = PHPhotoLibrary.authorizationStatus(),
-                               completion: @escaping (_ authorized: Bool) -> Void) {
-        switch status {
-        case .authorized:
-                completion(true)
-        case .notDetermined:
-            PHPhotoLibrary.requestAuthorization({ (status) -> Void in
-                DispatchQueue.main.async(execute: { () -> Void in
-                    self.authorize(status, completion: completion)
-                })
-            })
-        default: ()
-        DispatchQueue.main.async(execute: { () -> Void in
-            completion(false)
-        })
-        }
+        viewController.present(navigationController, animated: true, completion: nil)
     }
 }
-
 
 public protocol OMGImagePickerViewControllerDelegate:NSObjectProtocol {
     func imagePickerViewController(imagePickerViewController:OMGImagePickerViewController,didFinishPickingWith assets:PHFetchResult<PHAsset>)
     func imagePickerViewControllerDidCancel(imagePickerViewController:OMGImagePickerViewController)
+    func userDeniedAuthPhotosView(imagePickerViewController:OMGImagePickerViewController)->UIView?
 }
 
 public class OMGImagePickerViewController: UIViewController {
     
     fileprivate weak var delegate:OMGImagePickerViewControllerDelegate?
- 
     fileprivate var setting = OMGImagePickerSetting()
     fileprivate var activityIndicatorView = UIActivityIndicatorView(activityIndicatorStyle: UIActivityIndicatorViewStyle.gray)
     fileprivate var rightBarButton:UIBarButtonItem!
-    fileprivate var collectionView:UICollectionView!
-    fileprivate var flowLayout:UICollectionViewFlowLayout!
-    fileprivate let  imageManager = PHCachingImageManager()
+    fileprivate var collectionView:UICollectionView?
+    fileprivate var flowLayout:UICollectionViewFlowLayout?
     fileprivate var thumbnailSize: CGSize!
     fileprivate var albumSelectButton:UIButton!
     fileprivate var selectAssetCollection:PHAssetCollection?
     
     fileprivate var fetchResult:PHFetchResult<PHAsset>! {
         didSet {
-            collectionView.reloadData()
+            collectionView?.reloadData()
         }
     }
     
@@ -84,23 +55,16 @@ public class OMGImagePickerViewController: UIViewController {
     
     override public func viewDidLoad() {
         super.viewDidLoad()
-        viewSetup()
-        activityIndicatorView.center = view.center
-        activityIndicatorView.hidesWhenStopped = true
-        view.addSubview(activityIndicatorView)
-        PHPhotoLibrary.shared().register(self)
-        if fetchResult == nil {
-            let allPhotosOptions = PHFetchOptions()
-            allPhotosOptions.sortDescriptors = [NSSortDescriptor(key: "creationDate", ascending: false)]
-            fetchResult = PHAsset.fetchAssets(with: allPhotosOptions)
-        }
     }
     
     override public func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        let scale = UIScreen.main.scale
-        let cellSize = flowLayout.itemSize
-        thumbnailSize = CGSize(width: cellSize.width * scale, height: cellSize.height * scale)
+        viewSetup()
+        if let flowLayout = flowLayout {
+            let scale = UIScreen.main.scale
+            let cellSize = flowLayout.itemSize
+            thumbnailSize = CGSize(width: cellSize.width * scale, height: cellSize.height * scale)
+        }
     }
     
     deinit {
@@ -138,7 +102,7 @@ extension OMGImagePickerViewController:UICollectionViewDataSource {
                 cell.isSelected = true
                 collectionView.selectItem(at: indexPath, animated: false, scrollPosition: .centeredVertically)
             }
-            
+            let  imageManager = PHCachingImageManager()
             imageManager.requestImage(for: asset, targetSize: thumbnailSize, contentMode: .default, options: nil, resultHandler: { image, _ in
                 if cell.representedAssetIdentifier == asset.localIdentifier {
                     cell.thumbnailImage = image
@@ -205,7 +169,7 @@ extension OMGImagePickerViewController:UINavigationControllerDelegate,UIImagePic
         guard  let original = info[UIImagePickerControllerOriginalImage] as? UIImage else {
             return
         }
-        collectionView.isUserInteractionEnabled = false
+        collectionView?.isUserInteractionEnabled = false
         activityIndicatorView.startAnimating()
         addAsset(image: original)
         picker.dismiss(animated: true, completion: nil)
@@ -234,42 +198,111 @@ private extension OMGImagePickerViewController {
     func viewSetup()  {
         navigationController?.navigationBar.barTintColor = setting.navigationBarColor
         navigationController?.navigationBar.isTranslucent = setting.navigationBarTranslucent
-        flowLayout = UICollectionViewFlowLayout()
-        let itemSize = view.frame.width / 4 - 1
-        flowLayout.itemSize =  CGSize(width: itemSize, height: itemSize)
-        flowLayout.minimumInteritemSpacing = 1
-        flowLayout.minimumLineSpacing = 1
-        
-        collectionView = UICollectionView(frame: CGRect.zero, collectionViewLayout: flowLayout)
-        collectionView.translatesAutoresizingMaskIntoConstraints = false
-        collectionView.backgroundColor = UIColor.white
-        collectionView.delegate = self
-        collectionView.dataSource = self
-        collectionView.register(ImageCollectionViewCell.self, forCellWithReuseIdentifier: String(describing: ImageCollectionViewCell.self))
-        collectionView.allowsMultipleSelection = true
-        view.addSubview(collectionView)
-        view.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "V:|-0-[collectionView]-0-|", options: NSLayoutFormatOptions(rawValue: 0), metrics: nil, views: ["collectionView":collectionView]))
-        view.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "H:|-0-[collectionView]-0-|", options: NSLayoutFormatOptions(rawValue: 0), metrics: nil, views: ["collectionView":collectionView]))
-        
-        let rightBarButton = UIBarButtonItem(title: setting.rightBarTitle, style: .plain, target: self, action: .rightBarButtonAction)
-        rightBarButton.tintColor = UIColor.gray
-        navigationItem.rightBarButtonItem = rightBarButton
-        self.rightBarButton = rightBarButton
-        
         let lefeBarButton = UIBarButtonItem(title: setting.leftBarTitle, style: .plain, target: self, action: .leftBarButtonAction)
         lefeBarButton.tintColor = UIColor.red
         navigationItem.leftBarButtonItem = lefeBarButton
         
-        let albumSelectButton = UIButton(type: .custom)
-        albumSelectButton.setTitle(" All Photo", for: .normal)
-        albumSelectButton.setTitleColor(UIColor.black, for: .normal)
-        let bundle = Bundle(for: ImageCollectionViewCell.self)
-        let url = bundle.url(forResource: "OMGImagePicker", withExtension: "bundle")
-        albumSelectButton.setImage(UIImage(named: "arrow_down", in: Bundle(url:url!), compatibleWith: nil), for: .normal)
-        albumSelectButton.frame = CGRect(x: 0, y: 0, width: 200, height: 22)
-        albumSelectButton.addTarget(self, action: .showAlbumAction, for: .touchUpInside)
-        navigationItem.titleView = albumSelectButton
-        self.albumSelectButton = albumSelectButton
+        if PHPhotoLibrary.authorizationStatus() == .authorized {
+            activityIndicatorView.center = view.center
+            activityIndicatorView.hidesWhenStopped = true
+            view.addSubview(activityIndicatorView)
+            PHPhotoLibrary.shared().register(self)
+            if fetchResult == nil {
+                let allPhotosOptions = PHFetchOptions()
+                allPhotosOptions.sortDescriptors = [NSSortDescriptor(key: "creationDate", ascending: false)]
+                fetchResult = PHAsset.fetchAssets(with: allPhotosOptions)
+            }
+            
+            flowLayout = UICollectionViewFlowLayout()
+            let itemSize = view.frame.width / 4 - 1
+            flowLayout?.itemSize =  CGSize(width: itemSize, height: itemSize)
+            flowLayout?.minimumInteritemSpacing = 1
+            flowLayout?.minimumLineSpacing = 1
+            collectionView = UICollectionView(frame: CGRect.zero, collectionViewLayout: flowLayout!)
+            collectionView?.translatesAutoresizingMaskIntoConstraints = false
+            collectionView?.backgroundColor = UIColor.white
+            collectionView?.delegate = self
+            collectionView?.dataSource = self
+            collectionView?.register(ImageCollectionViewCell.self, forCellWithReuseIdentifier: String(describing: ImageCollectionViewCell.self))
+            collectionView?.allowsMultipleSelection = true
+            view.addSubview(collectionView!)
+            view.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "V:|-0-[collectionView]-0-|", options: NSLayoutFormatOptions(rawValue: 0), metrics: nil, views: ["collectionView":collectionView]))
+            view.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "H:|-0-[collectionView]-0-|", options: NSLayoutFormatOptions(rawValue: 0), metrics: nil, views: ["collectionView":collectionView]))
+            
+            let rightBarButton = UIBarButtonItem(title: setting.rightBarTitle, style: .plain, target: self, action: .rightBarButtonAction)
+            rightBarButton.tintColor = UIColor.gray
+            navigationItem.rightBarButtonItem = rightBarButton
+            self.rightBarButton = rightBarButton
+            
+            let albumSelectButton = UIButton(type: .custom)
+            albumSelectButton.setTitle(" All Photo", for: .normal)
+            albumSelectButton.setTitleColor(UIColor.black, for: .normal)
+            let bundle = Bundle(for: ImageCollectionViewCell.self)
+            let url = bundle.url(forResource: "OMGImagePicker", withExtension: "bundle")
+            albumSelectButton.setImage(UIImage(named: "arrow_down", in: Bundle(url:url!), compatibleWith: nil), for: .normal)
+            albumSelectButton.frame = CGRect(x: 0, y: 0, width: 200, height: 22)
+            albumSelectButton.addTarget(self, action: .showAlbumAction, for: .touchUpInside)
+            navigationItem.titleView = albumSelectButton
+            self.albumSelectButton = albumSelectButton
+        } else {
+            if let authorizeView = delegate?.userDeniedAuthPhotosView(imagePickerViewController: self) {
+                authorizeView.translatesAutoresizingMaskIntoConstraints = false
+                view.addSubview(authorizeView)
+                view.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "V:|-0-[authorizeView]-0-|", options: NSLayoutFormatOptions(rawValue: 0), metrics: nil, views: ["authorizeView":authorizeView]))
+                view.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "H:|-0-[authorizeView]-0-|", options: NSLayoutFormatOptions(rawValue: 0), metrics: nil, views: ["authorizeView":authorizeView]))
+            } else {
+                let authorizeView = UIView()
+                authorizeView.backgroundColor = UIColor.white
+                authorizeView.translatesAutoresizingMaskIntoConstraints = false
+                view.addSubview(authorizeView)
+                view.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "V:|-0-[authorizeView]-0-|", options: NSLayoutFormatOptions(rawValue: 0), metrics: nil, views: ["authorizeView":authorizeView]))
+                view.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "H:|-0-[authorizeView]-0-|", options: NSLayoutFormatOptions(rawValue: 0), metrics: nil, views: ["authorizeView":authorizeView]))
+                let titleLable = UILabel()
+                titleLable.textAlignment = .center
+                titleLable.text = "This app does not have access to your photo or videos."
+                titleLable.translatesAutoresizingMaskIntoConstraints = false
+                
+                titleLable.numberOfLines = 0
+                
+                if #available(iOS 9.0, *) {
+                    titleLable.font = UIFont.preferredFont(forTextStyle: .title3)
+                } else {
+                    titleLable.font = UIFont.preferredFont(forTextStyle: .headline)
+                }
+                authorizeView.addSubview(titleLable)
+                
+                let body = UILabel()
+                body.text = "You can enable access in Privacy Settings."
+                body.textAlignment = .center
+                
+                body.font = UIFont.preferredFont(forTextStyle: .subheadline)
+                
+                body.translatesAutoresizingMaskIntoConstraints = false
+                
+                body.numberOfLines = 0
+                body.textColor = UIColor.gray
+                authorizeView.addSubview(body)
+                
+                view.addConstraint(NSLayoutConstraint(item: titleLable, attribute: NSLayoutAttribute.centerY, relatedBy: NSLayoutRelation.equal, toItem: authorizeView, attribute: NSLayoutAttribute.centerY, multiplier: 0.5, constant: 0))
+                view.addConstraint(NSLayoutConstraint(item: titleLable, attribute: NSLayoutAttribute.centerX, relatedBy: NSLayoutRelation.equal, toItem: authorizeView, attribute: NSLayoutAttribute.centerX, multiplier: 1, constant: 0))
+                view.addConstraint(NSLayoutConstraint(item: titleLable, attribute: NSLayoutAttribute.left, relatedBy: NSLayoutRelation.equal, toItem: authorizeView, attribute: NSLayoutAttribute.left, multiplier: 1, constant: 8))
+                view.addConstraint(NSLayoutConstraint(item: titleLable, attribute: NSLayoutAttribute.right, relatedBy: NSLayoutRelation.equal, toItem: authorizeView, attribute: NSLayoutAttribute.right, multiplier: 1, constant: -8))
+                
+                view.addConstraint(NSLayoutConstraint(item: body, attribute: NSLayoutAttribute.centerX, relatedBy: NSLayoutRelation.equal, toItem: authorizeView, attribute: NSLayoutAttribute.centerX, multiplier: 1, constant: 0))
+                view.addConstraint(NSLayoutConstraint(item: body, attribute: NSLayoutAttribute.top, relatedBy: NSLayoutRelation.equal, toItem: titleLable, attribute: NSLayoutAttribute.bottom, multiplier: 1, constant: 10))
+                view.addConstraint(NSLayoutConstraint(item: body, attribute: NSLayoutAttribute.left, relatedBy: NSLayoutRelation.equal, toItem: authorizeView, attribute: NSLayoutAttribute.left, multiplier: 1, constant: 8))
+                view.addConstraint(NSLayoutConstraint(item: body, attribute: NSLayoutAttribute.right, relatedBy: NSLayoutRelation.equal, toItem: authorizeView, attribute: NSLayoutAttribute.right, multiplier: 1, constant: -8))
+                
+                let enableButton = UIButton(type: .custom)
+                enableButton.setTitle("Enable", for: .normal)
+                enableButton.translatesAutoresizingMaskIntoConstraints = false
+                enableButton.setTitleColor(UIColor.blue, for: .normal)
+                authorizeView.addSubview(enableButton)
+                view.addConstraint(NSLayoutConstraint(item: enableButton, attribute: NSLayoutAttribute.centerX, relatedBy: NSLayoutRelation.equal, toItem: authorizeView, attribute: NSLayoutAttribute.centerX, multiplier: 1, constant: 0))
+                view.addConstraint(NSLayoutConstraint(item: enableButton, attribute: NSLayoutAttribute.top, relatedBy: NSLayoutRelation.equal, toItem: body, attribute: NSLayoutAttribute.bottom, multiplier: 1, constant: 10))
+                enableButton.addTarget(self, action: .enableAccessPhotoAction, for: .touchUpInside)
+            }
+        }
     }
     
     @objc func showAlbumSelectViewController(_ sender: UIButton) {
@@ -299,6 +332,15 @@ private extension OMGImagePickerViewController {
     
     @objc func cancel () {
         delegate?.imagePickerViewControllerDidCancel(imagePickerViewController: self)
+    }
+    
+   @objc  func enableAccessPhoto()  {
+        let url = NSURL(string: UIApplicationOpenSettingsURLString) as! URL
+        if #available(iOS 10.0, *) {
+            UIApplication.shared.open(url, options: [:], completionHandler: nil)
+        } else if #available(iOS 9.0, *) {
+            UIApplication.shared.openURL(url)
+        }
     }
 }
 
@@ -340,7 +382,7 @@ extension OMGImagePickerViewController: PHPhotoLibraryChangeObserver {
                 }
                 
                 activityIndicatorView.stopAnimating()
-                collectionView.isUserInteractionEnabled = true
+                collectionView?.isUserInteractionEnabled = true
             }
         }
     }
@@ -367,8 +409,8 @@ fileprivate extension Selector {
     static let rightBarButtonAction = #selector(OMGImagePickerViewController.done)
     static let leftBarButtonAction = #selector(OMGImagePickerViewController.cancel)
     static let showAlbumAction = #selector(OMGImagePickerViewController.showAlbumSelectViewController(_:))
+    static let enableAccessPhotoAction = #selector(OMGImagePickerViewController.enableAccessPhoto)
 }
-
 
 fileprivate extension Array where Element: Equatable {
     mutating func remove(object: Element) {

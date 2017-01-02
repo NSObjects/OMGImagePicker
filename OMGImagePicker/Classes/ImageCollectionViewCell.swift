@@ -31,7 +31,6 @@ class ImageCollectionViewCell: UICollectionViewCell {
         contentView.addSubview(imageView)
         contentView.addSubview(checkBoxImageView)
         contentView.addSubview(disableView)
-        
         imageView.contentMode = .scaleToFill
         checkBoxImageView.translatesAutoresizingMaskIntoConstraints = false
         imageView.translatesAutoresizingMaskIntoConstraints = false
