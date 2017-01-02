@@ -43,7 +43,6 @@ class ViewController: UIViewController {
        var setting = OMGImagePickerSetting()
         setting.rightBarTitle = "Continue"
         setting.maxNumberOfSelection = 5
-
         present(omg_present: self, delegate: self,setting:setting)
     }
 }

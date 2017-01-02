@@ -16,17 +16,11 @@ import OMGImagePicker
 present(omg_present: self, delegate: self)
 ```
 
-User does not authorize processing
-```
-present(omg_present: self, delegate: self) {
-	//to do
-}
-```
-
-OMGImagePickerViewController  has two delegate methods that will inform you what the users are up to:
+OMGImagePickerViewController  has three delegate methods that will inform you what the users are up to:
 ```     
 func imagePickerViewController(vc:OMGImagePickerViewController,didFinishPickingWith assets:PHFetchResult<PHAsset>)
 func imagePickerViewControllerDidCancel(vc:OMGImagePickerViewController)
+func userDeniedAuthPhotosView(imagePickerViewController:OMGImagePickerViewController)->UIView?
 ```
 
 ### Configuration
@@ -34,8 +28,7 @@ func imagePickerViewControllerDidCancel(vc:OMGImagePickerViewController)
 var setting = OMGImagePickerSetting()
 setting.rightBarTitle = "Continue"
 setting.maxNumberOfSelection = 5
-present(omg_present: self, delegate: self,setting:setting) {
-}
+present(omg_present: self, delegate: self,setting:setting)
 ```
 
 ```
